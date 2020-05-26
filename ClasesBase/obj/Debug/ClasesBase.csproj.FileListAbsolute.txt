@@ -1,0 +1,11 @@
+C:\Users\usuario\Desktop\apu2020\LPOO\proyectos VS\lpoo1_grupo_5 TPN°1\LPOO1_Grupo5_TPN°1\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\usuario\Desktop\apu2020\LPOO\proyectos VS\lpoo1_grupo_5 TPN°1\LPOO1_Grupo5_TPN°1\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\usuario\Desktop\apu2020\LPOO\proyectos VS\lpoo1_grupo_5 TPN°1\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\usuario\Desktop\apu2020\LPOO\proyectos VS\lpoo1_grupo_5 TPN°1\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\usuario\Desktop\apu2020\LPOO\proyectos VS\lpoo1_grupo_5 TPN°1\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\bin\Debug\ClasesBase.dll.config
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\bin\Debug\ClasesBase.dll
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\bin\Debug\ClasesBase.pdb
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.dll
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\ClasesBase\obj\Debug\ClasesBase.pdb

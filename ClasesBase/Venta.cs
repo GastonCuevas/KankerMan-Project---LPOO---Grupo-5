@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ClasesBase
+{
+    public class Venta
+    {
+        private int VTA_ID;
+
+        public int VTA_id
+        {
+            get { return VTA_ID; }
+            set { VTA_ID = value; }
+        }
+        private string CLI_DNI;
+
+        public string CLI_dni
+        {
+            get { return CLI_DNI; }
+            set { CLI_DNI = value; }
+        }
+        private string VEH_Matricula;
+
+        public string VEH_matricula
+        {
+            get { return VEH_Matricula; }
+            set { VEH_Matricula = value; }
+        }
+        private int USU_ID;
+
+        public int USU_id
+        {
+            get { return USU_ID; }
+            set { USU_ID = value; }
+        }
+        private DateTime VTA_Fecha;
+
+        public DateTime VTA_fecha
+        {
+            get { return VTA_Fecha; }
+            set { VTA_Fecha = value; }
+        }
+        private string VTA_FormaPago;
+
+        public string VTA_formaPago
+        {
+            get { return VTA_FormaPago; }
+            set { VTA_FormaPago = value; }
+        }
+        private decimal VTA_PrecioFinal;
+
+        public decimal VTA_precioFinal
+        {
+            get { return VTA_PrecioFinal; }
+            set { VTA_PrecioFinal = value; }
+        }
+    }
+}
