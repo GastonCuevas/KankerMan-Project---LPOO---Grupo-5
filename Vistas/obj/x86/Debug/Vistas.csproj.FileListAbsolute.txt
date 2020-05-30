@@ -29,3 +29,4 @@ D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\bin\Debug\Cl
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmVentas.resources
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmClientes.resources
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmListaVentas.resources
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmVehiculos.resources

@@ -115,6 +115,38 @@ namespace ClasesBase
         }
 
         /// <summary>
+        /// Método que consulta a la tabla Cliente y devuelve una lista de clientes ordendas por el apellido 
+        /// mediante un Stored Procedure
+        /// </summary>
+        /// <returns>Tabla con datos de Cliente</returns>
+        public static DataTable traerClientesSP()
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "traerClientes";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Creación de la tabla
+
+            DataTable dt = new DataTable();
+
+            //Cración del adaptador
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+
+            //Llenamos la tabla con los datos que necesitamos
+            da.Fill(dt);
+
+            //Retornamos la tabla cargada
+            return dt;
+        }
+
+        /// <summary>
         /// Método que consulta a la tabla Roles y devuelve todos los datos de la misma
         /// </summary>
         /// <returns>Tabla</returns>
@@ -234,6 +266,38 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
 
             cnn.Close();
+        }
+
+        /// <summary>
+        /// Método que consulta a la tabla Cliente y devuelve una lista de Clientes ordendos por la Apellido para un comboBox 
+        /// mediante un Stored Procedure
+        /// </summary>
+        /// <returns>Tabla con datos de Cliente</returns>
+        public static DataTable traerClientesComboBoxSP()
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "clienteComboBox";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Creación de la tabla
+
+            DataTable dt = new DataTable();
+
+            //Cración del adaptador
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+
+            //Llenamos la tabla con los datos que necesitamos
+            da.Fill(dt);
+
+            //Retornamos la tabla cargada
+            return dt;
         }
     }
 }

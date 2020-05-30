@@ -58,6 +58,7 @@
             this.cboClientes.Name = "cboClientes";
             this.cboClientes.Size = new System.Drawing.Size(348, 21);
             this.cboClientes.TabIndex = 1;
+            this.cboClientes.SelectedIndexChanged += new System.EventHandler(this.cboClientes_SelectedIndexChanged);
             // 
             // btnConfirmar
             // 

@@ -99,5 +99,10 @@ namespace Vistas
 
             return id;
         }
+
+        private void cboClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

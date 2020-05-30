@@ -100,6 +100,11 @@ namespace Vistas
             txtDireccion.Text = direccion;
         }
 
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = TrabajarCliente.traerClientesSP();
+        }
+
 
     }
 }

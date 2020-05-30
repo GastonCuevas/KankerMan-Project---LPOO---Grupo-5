@@ -40,8 +40,8 @@ namespace Vistas
 
         private void vehicleRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVehicleRegistration oFrmVehicleRegistration = new FrmVehicleRegistration();
-            oFrmVehicleRegistration.Show();
+            frmVehiculos oFrmVehiculos = new frmVehiculos();
+            oFrmVehiculos.Show();
         }
 
         private void closebutton_Click(object sender, EventArgs e)
