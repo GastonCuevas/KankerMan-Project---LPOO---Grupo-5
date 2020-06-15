@@ -46,6 +46,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnOrdenar = new System.Windows.Forms.Button();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +132,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(535, 28);
+            this.txtFiltro.Location = new System.Drawing.Point(420, 28);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(250, 20);
             this.txtFiltro.TabIndex = 10;
@@ -139,7 +140,7 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(447, 31);
+            this.lblFiltro.Location = new System.Drawing.Point(332, 31);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(82, 13);
             this.lblFiltro.TabIndex = 12;
@@ -147,7 +148,7 @@
             // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(807, 26);
+            this.btnFiltro.Location = new System.Drawing.Point(676, 26);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(57, 22);
             this.btnFiltro.TabIndex = 14;
@@ -160,7 +161,7 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(335, 72);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(529, 315);
+            this.dgvClientes.Size = new System.Drawing.Size(566, 315);
             this.dgvClientes.TabIndex = 15;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -196,19 +197,30 @@
             // 
             // btnOrdenar
             // 
-            this.btnOrdenar.Location = new System.Drawing.Point(335, 26);
+            this.btnOrdenar.Location = new System.Drawing.Point(739, 26);
             this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(100, 28);
+            this.btnOrdenar.Size = new System.Drawing.Size(82, 22);
             this.btnOrdenar.TabIndex = 19;
-            this.btnOrdenar.Text = "Ordenar Lista";
+            this.btnOrdenar.Text = "Sort List";
             this.btnOrdenar.UseVisualStyleBackColor = true;
             this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(827, 26);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(75, 22);
+            this.btnRefrescar.TabIndex = 20;
+            this.btnRefrescar.Text = "Refresh Grid";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 461);
+            this.ClientSize = new System.Drawing.Size(913, 461);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnOrdenar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -256,5 +268,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }

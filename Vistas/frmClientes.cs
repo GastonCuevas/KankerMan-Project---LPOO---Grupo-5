@@ -25,21 +25,44 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtDireccion.Text == "" || txtDNI.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "")
             {
-                Cliente oCliente = new Cliente();
-
-                oCliente.CLI_apellido = txtApellido.Text;
-                oCliente.CLI_direccion = txtDireccion.Text;
-                oCliente.CLI_dni = txtDNI.Text;
-                oCliente.CLI_nombre = txtNombre.Text;
-                oCliente.CLI_telefono = txtTelefono.Text;
-
-                TrabajarCliente.AgregarCliente(oCliente);
-
-                cargarGrilla();
+                MessageBox.Show("No puede registar campos vacíos");
             }
+            else
+            {
+                if (TrabajarCliente.VerificarCliente(txtDNI.Text) == false)
+                {
+                    if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Cliente oCliente = new Cliente();
+
+                        oCliente.CLI_apellido = txtApellido.Text;
+                        oCliente.CLI_direccion = txtDireccion.Text;
+                        oCliente.CLI_dni = txtDNI.Text;
+                        oCliente.CLI_nombre = txtNombre.Text;
+                        oCliente.CLI_telefono = txtTelefono.Text;
+
+                        TrabajarCliente.AgregarCliente(oCliente);
+
+                        cargarGrilla();
+                        limpiarCampos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este DNI ya está registrado, ingrese uno diferente.");
+                }
+            }
+        }
+
+        private void limpiarCampos()
+        {
+            txtApellido.Text = "";
+            txtDireccion.Text = "";
+            txtDNI.Text = "";
+            txtNombre.Text = "";
+            txtTelefono.Text = "";
         }
 
         private void cargarGrilla() 
@@ -57,27 +80,42 @@ namespace Vistas
                 TrabajarCliente.EliminarCliente(dniCliente);
 
                 cargarGrilla();
+                limpiarCampos();
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtDireccion.Text == "" || txtDNI.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "")
             {
-                Cliente oCliente = new Cliente();
+                MessageBox.Show("No puede registar campos vacíos");
+            }
+            else
+            {
+                if (TrabajarCliente.VerificarCliente(txtDNI.Text) == true)
+                {
+                    if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Cliente oCliente = new Cliente();
 
-                string dniCliente = (string)dgvClientes.CurrentRow.Cells[0].Value;
+                        string dniCliente = (string)dgvClientes.CurrentRow.Cells[0].Value;
 
-                oCliente.CLI_apellido = txtApellido.Text;
-                oCliente.CLI_direccion = txtDireccion.Text;
-                oCliente.CLI_nombre = txtNombre.Text;
-                oCliente.CLI_telefono = txtTelefono.Text;
-                oCliente.CLI_dni = dniCliente;
+                        oCliente.CLI_apellido = txtApellido.Text;
+                        oCliente.CLI_direccion = txtDireccion.Text;
+                        oCliente.CLI_nombre = txtNombre.Text;
+                        oCliente.CLI_telefono = txtTelefono.Text;
+                        oCliente.CLI_dni = dniCliente;
 
-                TrabajarCliente.ModificarCliente(oCliente);
+                        TrabajarCliente.ModificarCliente(oCliente);
 
-                cargarGrilla();
+                        cargarGrilla();
+                        limpiarCampos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este DNI no está registrado, ingrese uno válido.");
+                }
             }
         }
 
@@ -103,6 +141,12 @@ namespace Vistas
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
             dgvClientes.DataSource = TrabajarCliente.traerClientesSP();
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+            txtFiltro.Text = "";
         }
 
 

@@ -44,20 +44,23 @@
             this.lblGPS = new System.Windows.Forms.Label();
             this.cbGPS = new System.Windows.Forms.CheckBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.txtLinea = new System.Windows.Forms.TextBox();
-            this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
-            this.txtCantidadPuertas = new System.Windows.Forms.TextBox();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.txtClaseVehiculo = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnOrdenar = new System.Windows.Forms.Button();
             this.rbtMarca = new System.Windows.Forms.RadioButton();
             this.rbtLinea = new System.Windows.Forms.RadioButton();
             this.gbOrdenar = new System.Windows.Forms.GroupBox();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboLinea = new System.Windows.Forms.ComboBox();
+            this.cboTipoVehiculo = new System.Windows.Forms.ComboBox();
+            this.cboColor = new System.Windows.Forms.ComboBox();
+            this.cboClaseVehiculo = new System.Windows.Forms.ComboBox();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.nudModelo = new System.Windows.Forms.NumericUpDown();
+            this.cboCantPuertas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.gbOrdenar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVehiculos
@@ -65,7 +68,7 @@
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehiculos.Location = new System.Drawing.Point(300, 71);
             this.dgvVehiculos.Name = "dgvVehiculos";
-            this.dgvVehiculos.Size = new System.Drawing.Size(482, 280);
+            this.dgvVehiculos.Size = new System.Drawing.Size(632, 280);
             this.dgvVehiculos.TabIndex = 0;
             this.dgvVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellContentClick);
             // 
@@ -104,54 +107,54 @@
             this.lblMatricula.AutoSize = true;
             this.lblMatricula.Location = new System.Drawing.Point(12, 15);
             this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(50, 13);
+            this.lblMatricula.Size = new System.Drawing.Size(56, 13);
             this.lblMatricula.TabIndex = 4;
-            this.lblMatricula.Text = "Matricula";
+            this.lblMatricula.Text = "Enrollment";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(12, 46);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.Size = new System.Drawing.Size(35, 13);
             this.lblMarca.TabIndex = 5;
-            this.lblMarca.Text = "Marca";
+            this.lblMarca.Text = "Brand";
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
             this.lblModelo.Location = new System.Drawing.Point(12, 77);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(42, 13);
+            this.lblModelo.Size = new System.Drawing.Size(36, 13);
             this.lblModelo.TabIndex = 6;
-            this.lblModelo.Text = "Modelo";
+            this.lblModelo.Text = "Model";
             // 
             // lblLinea
             // 
             this.lblLinea.AutoSize = true;
             this.lblLinea.Location = new System.Drawing.Point(12, 108);
             this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(33, 13);
+            this.lblLinea.Size = new System.Drawing.Size(27, 13);
             this.lblLinea.TabIndex = 7;
-            this.lblLinea.Text = "Linea";
+            this.lblLinea.Text = "Line";
             // 
             // lblTipoVehiculo
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.Location = new System.Drawing.Point(12, 139);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
-            this.lblTipoVehiculo.Size = new System.Drawing.Size(89, 13);
+            this.lblTipoVehiculo.Size = new System.Drawing.Size(69, 13);
             this.lblTipoVehiculo.TabIndex = 8;
-            this.lblTipoVehiculo.Text = "Tipo de Vehículo";
+            this.lblTipoVehiculo.Text = "Vehicle Type";
             // 
             // lblPuertas
             // 
             this.lblPuertas.AutoSize = true;
             this.lblPuertas.Location = new System.Drawing.Point(12, 170);
             this.lblPuertas.Name = "lblPuertas";
-            this.lblPuertas.Size = new System.Drawing.Size(71, 13);
+            this.lblPuertas.Size = new System.Drawing.Size(35, 13);
             this.lblPuertas.TabIndex = 9;
-            this.lblPuertas.Text = "Cant. Puertas";
+            this.lblPuertas.Text = "Doors";
             // 
             // lblColor
             // 
@@ -167,18 +170,18 @@
             this.lblClaseVehiculo.AutoSize = true;
             this.lblClaseVehiculo.Location = new System.Drawing.Point(12, 232);
             this.lblClaseVehiculo.Name = "lblClaseVehiculo";
-            this.lblClaseVehiculo.Size = new System.Drawing.Size(79, 13);
+            this.lblClaseVehiculo.Size = new System.Drawing.Size(70, 13);
             this.lblClaseVehiculo.TabIndex = 11;
-            this.lblClaseVehiculo.Text = "Clase Vehículo";
+            this.lblClaseVehiculo.Text = "Vehicle Class";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(12, 263);
+            this.lblPrecio.Location = new System.Drawing.Point(12, 262);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(31, 13);
             this.lblPrecio.TabIndex = 12;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "Price";
             // 
             // lblGPS
             // 
@@ -205,69 +208,13 @@
             this.txtMatricula.Size = new System.Drawing.Size(169, 20);
             this.txtMatricula.TabIndex = 15;
             // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(103, 43);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(169, 20);
-            this.txtMarca.TabIndex = 16;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(103, 74);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(169, 20);
-            this.txtModelo.TabIndex = 17;
-            // 
-            // txtLinea
-            // 
-            this.txtLinea.Location = new System.Drawing.Point(103, 105);
-            this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(169, 20);
-            this.txtLinea.TabIndex = 18;
-            // 
-            // txtTipoVehiculo
-            // 
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(103, 136);
-            this.txtTipoVehiculo.Name = "txtTipoVehiculo";
-            this.txtTipoVehiculo.Size = new System.Drawing.Size(169, 20);
-            this.txtTipoVehiculo.TabIndex = 19;
-            // 
-            // txtCantidadPuertas
-            // 
-            this.txtCantidadPuertas.Location = new System.Drawing.Point(103, 167);
-            this.txtCantidadPuertas.Name = "txtCantidadPuertas";
-            this.txtCantidadPuertas.Size = new System.Drawing.Size(169, 20);
-            this.txtCantidadPuertas.TabIndex = 20;
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(103, 198);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(169, 20);
-            this.txtColor.TabIndex = 21;
-            // 
-            // txtClaseVehiculo
-            // 
-            this.txtClaseVehiculo.Location = new System.Drawing.Point(103, 229);
-            this.txtClaseVehiculo.Name = "txtClaseVehiculo";
-            this.txtClaseVehiculo.Size = new System.Drawing.Size(169, 20);
-            this.txtClaseVehiculo.TabIndex = 22;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(103, 260);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(169, 20);
-            this.txtPrecio.TabIndex = 23;
-            // 
             // btnOrdenar
             // 
             this.btnOrdenar.Location = new System.Drawing.Point(631, 31);
             this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(64, 24);
+            this.btnOrdenar.Size = new System.Drawing.Size(64, 23);
             this.btnOrdenar.TabIndex = 24;
-            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.Text = "Sort";
             this.btnOrdenar.UseVisualStyleBackColor = true;
             this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             // 
@@ -277,10 +224,10 @@
             this.rbtMarca.Checked = true;
             this.rbtMarca.Location = new System.Drawing.Point(55, 19);
             this.rbtMarca.Name = "rbtMarca";
-            this.rbtMarca.Size = new System.Drawing.Size(55, 17);
+            this.rbtMarca.Size = new System.Drawing.Size(53, 17);
             this.rbtMarca.TabIndex = 25;
             this.rbtMarca.TabStop = true;
-            this.rbtMarca.Text = "Marca";
+            this.rbtMarca.Text = "Brand";
             this.rbtMarca.UseVisualStyleBackColor = true;
             // 
             // rbtLinea
@@ -288,10 +235,10 @@
             this.rbtLinea.AutoSize = true;
             this.rbtLinea.Location = new System.Drawing.Point(144, 19);
             this.rbtLinea.Name = "rbtLinea";
-            this.rbtLinea.Size = new System.Drawing.Size(51, 17);
+            this.rbtLinea.Size = new System.Drawing.Size(45, 17);
             this.rbtLinea.TabIndex = 26;
             this.rbtLinea.TabStop = true;
-            this.rbtLinea.Text = "Linea";
+            this.rbtLinea.Text = "Line";
             this.rbtLinea.UseVisualStyleBackColor = true;
             // 
             // gbOrdenar
@@ -305,21 +252,94 @@
             this.gbOrdenar.TabStop = false;
             this.gbOrdenar.Text = "Sort By:";
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(707, 32);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrescar.TabIndex = 28;
+            this.btnRefrescar.Text = "Refresh Grid";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(103, 43);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(169, 21);
+            this.cboMarca.TabIndex = 29;
+            // 
+            // cboLinea
+            // 
+            this.cboLinea.FormattingEnabled = true;
+            this.cboLinea.Location = new System.Drawing.Point(103, 105);
+            this.cboLinea.Name = "cboLinea";
+            this.cboLinea.Size = new System.Drawing.Size(169, 21);
+            this.cboLinea.TabIndex = 31;
+            // 
+            // cboTipoVehiculo
+            // 
+            this.cboTipoVehiculo.FormattingEnabled = true;
+            this.cboTipoVehiculo.Location = new System.Drawing.Point(103, 136);
+            this.cboTipoVehiculo.Name = "cboTipoVehiculo";
+            this.cboTipoVehiculo.Size = new System.Drawing.Size(169, 21);
+            this.cboTipoVehiculo.TabIndex = 32;
+            // 
+            // cboColor
+            // 
+            this.cboColor.FormattingEnabled = true;
+            this.cboColor.Location = new System.Drawing.Point(103, 198);
+            this.cboColor.Name = "cboColor";
+            this.cboColor.Size = new System.Drawing.Size(169, 21);
+            this.cboColor.TabIndex = 34;
+            // 
+            // cboClaseVehiculo
+            // 
+            this.cboClaseVehiculo.FormattingEnabled = true;
+            this.cboClaseVehiculo.Location = new System.Drawing.Point(103, 229);
+            this.cboClaseVehiculo.Name = "cboClaseVehiculo";
+            this.cboClaseVehiculo.Size = new System.Drawing.Size(169, 21);
+            this.cboClaseVehiculo.TabIndex = 35;
+            // 
+            // nudPrecio
+            // 
+            this.nudPrecio.Location = new System.Drawing.Point(103, 260);
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(169, 20);
+            this.nudPrecio.TabIndex = 36;
+            // 
+            // nudModelo
+            // 
+            this.nudModelo.Location = new System.Drawing.Point(103, 75);
+            this.nudModelo.Name = "nudModelo";
+            this.nudModelo.Size = new System.Drawing.Size(169, 20);
+            this.nudModelo.TabIndex = 37;
+            // 
+            // cboCantPuertas
+            // 
+            this.cboCantPuertas.FormattingEnabled = true;
+            this.cboCantPuertas.Location = new System.Drawing.Point(103, 167);
+            this.cboCantPuertas.Name = "cboCantPuertas";
+            this.cboCantPuertas.Size = new System.Drawing.Size(169, 21);
+            this.cboCantPuertas.TabIndex = 33;
+            // 
             // frmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 380);
+            this.ClientSize = new System.Drawing.Size(950, 380);
+            this.Controls.Add(this.nudModelo);
+            this.Controls.Add(this.nudPrecio);
+            this.Controls.Add(this.cboClaseVehiculo);
+            this.Controls.Add(this.cboColor);
+            this.Controls.Add(this.cboCantPuertas);
+            this.Controls.Add(this.cboTipoVehiculo);
+            this.Controls.Add(this.cboLinea);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.gbOrdenar);
             this.Controls.Add(this.btnOrdenar);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtClaseVehiculo);
-            this.Controls.Add(this.txtColor);
-            this.Controls.Add(this.txtCantidadPuertas);
-            this.Controls.Add(this.txtTipoVehiculo);
-            this.Controls.Add(this.txtLinea);
-            this.Controls.Add(this.txtModelo);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.cbGPS);
             this.Controls.Add(this.lblGPS);
@@ -342,6 +362,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.gbOrdenar.ResumeLayout(false);
             this.gbOrdenar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,17 +387,18 @@
         private System.Windows.Forms.Label lblGPS;
         private System.Windows.Forms.CheckBox cbGPS;
         private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.TextBox txtLinea;
-        private System.Windows.Forms.TextBox txtTipoVehiculo;
-        private System.Windows.Forms.TextBox txtCantidadPuertas;
-        private System.Windows.Forms.TextBox txtColor;
-        private System.Windows.Forms.TextBox txtClaseVehiculo;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btnOrdenar;
         private System.Windows.Forms.RadioButton rbtMarca;
         private System.Windows.Forms.RadioButton rbtLinea;
         private System.Windows.Forms.GroupBox gbOrdenar;
+        private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboLinea;
+        private System.Windows.Forms.ComboBox cboTipoVehiculo;
+        private System.Windows.Forms.ComboBox cboColor;
+        private System.Windows.Forms.ComboBox cboClaseVehiculo;
+        private System.Windows.Forms.NumericUpDown nudPrecio;
+        private System.Windows.Forms.NumericUpDown nudModelo;
+        private System.Windows.Forms.ComboBox cboCantPuertas;
     }
 }

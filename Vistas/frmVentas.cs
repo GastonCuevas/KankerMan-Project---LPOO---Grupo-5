@@ -81,16 +81,22 @@ namespace Vistas
                 oVenta.VTA_fecha = dtpFecha.Value;
                 oVenta.VTA_formaPago = (string)pago;
                 oVenta.VTA_precioFinal = Decimal.Parse(TrabajarVehiculo.verPrecio((string)cboVehiculo.SelectedValue));
+                oVenta.VTA_estado = true;
 
                 TrabajarVenta.AgregarVenta(oVenta);
 
                 MessageBox.Show("¡VENTA REGISTRADA CON EXITO!");
+                limpiarCampos();
             }
         }
 
-        private void btnPrecio_Click(object sender, EventArgs e)
+        private void limpiarCampos()
         {
-            txtPrecio.Text = "$"+TrabajarVehiculo.verPrecio((string)cboVehiculo.SelectedValue);
+            dtpFecha.Value = DateTime.Today;
+            cboClientes.Text = "Seleccionar Cliente";
+            cboVehiculo.Text = "Seleccionar Vehiculo";
+            cboFormaPago.Text = "Seleccionar Forma de Pago";
+            txtPrecio.Text = "";
         }
 
         private string cargarId(string u)
@@ -100,9 +106,9 @@ namespace Vistas
             return id;
         }
 
-        private void cboClientes_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboVehiculo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
+            txtPrecio.Text = "$" + TrabajarVehiculo.verPrecio((string)cboVehiculo.SelectedValue);
         }
     }
 }

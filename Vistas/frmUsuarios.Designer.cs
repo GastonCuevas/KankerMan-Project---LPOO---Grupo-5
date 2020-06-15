@@ -42,6 +42,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +63,12 @@
             // 
             this.txtFiltro.Location = new System.Drawing.Point(418, 27);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(446, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(325, 20);
             this.txtFiltro.TabIndex = 1;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(879, 27);
+            this.btnConsultar.Location = new System.Drawing.Point(764, 27);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(89, 21);
             this.btnConsultar.TabIndex = 2;
@@ -170,11 +171,22 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(879, 26);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(89, 21);
+            this.btnRefrescar.TabIndex = 16;
+            this.btnRefrescar.Text = "Refresh Grid";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 363);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregar);
@@ -214,5 +226,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }

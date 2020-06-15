@@ -22,10 +22,10 @@ namespace ClasesBase
             //Configuración de la consulta
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select ";
-            cmd.CommandText += " usu_id as 'ID', ";
             cmd.CommandText += " rol_codigo as 'Rol', ";
             cmd.CommandText += " usu_apellidoNombre as 'Apellido y Nombre', ";
-            cmd.CommandText += " usu_nombreusuario as 'Usuario', usu_contraseña as 'Contraseña' ";
+            cmd.CommandText += " usu_nombreusuario as 'Usuario', usu_contraseña as 'Contraseña', ";
+            cmd.CommandText += " usu_id as 'ID'";
             cmd.CommandText += " from Usuario as U";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -341,6 +341,52 @@ namespace ClasesBase
             //Retornamos el rol
 
             return id;
+        }
+
+        /// <summary>
+        /// Método que verifica si el Usuario ya está registrado en la base de datos
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns>bandera</returns>
+        public static bool VerificarUsuario(string nombreUsuario)
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta - Select con parametros
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @" select usu_nombreusuario " + "From Usuario";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            bool bandera = false;
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader["usu_nombreusuario"].Equals(nombreUsuario))
+                    {
+                        bandera = true;
+                    }
+                }
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                string error = ex.Message;
+                bandera = false;
+            }
+            finally
+            {
+                cnn.Close();
+            }
+
+            return bandera;
+
         }
     }
 }

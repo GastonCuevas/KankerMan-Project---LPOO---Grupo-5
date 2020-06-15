@@ -38,8 +38,8 @@
             this.lblFormaPago = new System.Windows.Forms.Label();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.btnPrecio = new System.Windows.Forms.Button();
             this.lblVendedor = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblClientes
@@ -58,7 +58,6 @@
             this.cboClientes.Name = "cboClientes";
             this.cboClientes.Size = new System.Drawing.Size(348, 21);
             this.cboClientes.TabIndex = 1;
-            this.cboClientes.SelectedIndexChanged += new System.EventHandler(this.cboClientes_SelectedIndexChanged);
             // 
             // btnConfirmar
             // 
@@ -103,6 +102,7 @@
             this.cboVehiculo.Name = "cboVehiculo";
             this.cboVehiculo.Size = new System.Drawing.Size(348, 21);
             this.cboVehiculo.TabIndex = 6;
+            this.cboVehiculo.SelectionChangeCommitted += new System.EventHandler(this.cboVehiculo_SelectionChangeCommitted);
             // 
             // lblFormaPago
             // 
@@ -128,16 +128,6 @@
             this.txtPrecio.Size = new System.Drawing.Size(348, 20);
             this.txtPrecio.TabIndex = 10;
             // 
-            // btnPrecio
-            // 
-            this.btnPrecio.Location = new System.Drawing.Point(40, 210);
-            this.btnPrecio.Name = "btnPrecio";
-            this.btnPrecio.Size = new System.Drawing.Size(101, 30);
-            this.btnPrecio.TabIndex = 11;
-            this.btnPrecio.Text = "Mostrar Precio";
-            this.btnPrecio.UseVisualStyleBackColor = true;
-            this.btnPrecio.Click += new System.EventHandler(this.btnPrecio_Click);
-            // 
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
@@ -146,13 +136,22 @@
             this.lblVendedor.Size = new System.Drawing.Size(0, 13);
             this.lblVendedor.TabIndex = 12;
             // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(73, 219);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(31, 13);
+            this.lblPrecio.TabIndex = 13;
+            this.lblPrecio.Text = "Price";
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 446);
+            this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblVendedor);
-            this.Controls.Add(this.btnPrecio);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboFormaPago);
             this.Controls.Add(this.lblFormaPago);
@@ -183,7 +182,7 @@
         private System.Windows.Forms.Label lblFormaPago;
         private System.Windows.Forms.ComboBox cboFormaPago;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Button btnPrecio;
         private System.Windows.Forms.Label lblVendedor;
+        private System.Windows.Forms.Label lblPrecio;
     }
 }

@@ -35,19 +35,43 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+
+            if (txtUsuario.Text == "" || txtNombreApellido.Text == "" || txtContraseña.Text == "")
             {
-                Usuario oUsuario = new Usuario();
-
-                oUsuario.USU_apellidoNombre = txtNombreApellido.Text;
-                oUsuario.USU_contraseña = txtContraseña.Text;
-                oUsuario.USU_nombreUsuario = txtUsuario.Text;
-                oUsuario.ROL_codigo = (string)cboRol.SelectedValue;
-
-                TrabajarUsuarios.AgregarUsuario(oUsuario);
-
-                cargarGrilla();
+                MessageBox.Show("No puede registar campos vacíos");
             }
+            else 
+            {
+                if (TrabajarUsuarios.VerificarUsuario(txtUsuario.Text) == false)
+                {
+                    if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Usuario oUsuario = new Usuario();
+
+                        oUsuario.USU_apellidoNombre = txtNombreApellido.Text;
+                        oUsuario.USU_contraseña = txtContraseña.Text;
+                        oUsuario.USU_nombreUsuario = txtUsuario.Text;
+                        oUsuario.ROL_codigo = (string)cboRol.SelectedValue;
+
+                        TrabajarUsuarios.AgregarUsuario(oUsuario);
+
+                        cargarGrilla();
+                        limpiarCampos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este nombre de usuario ya esta registrado, intente con otro.");
+                }
+            }
+        }
+
+        private void limpiarCampos()
+        {
+            txtContraseña.Text = "";
+            txtNombreApellido.Text = "";
+            txtUsuario.Text = "";
+            cboRol.Text = "Seleccionar Rol";
         }
 
         private void cargarGrilla()
@@ -64,32 +88,55 @@ namespace Vistas
                 TrabajarUsuarios.EliminarUsuario(idUsuario);
 
                 cargarGrilla();
+                limpiarCampos();
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes) {
 
-                Usuario oUsuario = new Usuario();
+            if (txtUsuario.Text == "" || txtNombreApellido.Text == "" || txtContraseña.Text == "")
+            {
+                MessageBox.Show("No puede registar campos vacíos");
+            }
+            else
+            {
+                if (TrabajarUsuarios.VerificarUsuario(txtUsuario.Text) == false)
+                {
+                    if (MessageBox.Show("confirms the action?", "Save data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
 
-                int idUsuario = (int)dgvUsuarios.CurrentRow.Cells[0].Value;
+                        Usuario oUsuario = new Usuario();
 
-                oUsuario.USU_id = idUsuario;
-                oUsuario.USU_apellidoNombre = txtNombreApellido.Text;
-                oUsuario.USU_contraseña = txtContraseña.Text;
-                oUsuario.USU_nombreUsuario = txtUsuario.Text;
-                oUsuario.ROL_codigo = (string)cboRol.SelectedValue;
+                        int idUsuario = (int)dgvUsuarios.CurrentRow.Cells[0].Value;
 
-                TrabajarUsuarios.ModificarUsuario(oUsuario);
+                        oUsuario.USU_id = idUsuario;
+                        oUsuario.USU_apellidoNombre = txtNombreApellido.Text;
+                        oUsuario.USU_contraseña = txtContraseña.Text;
+                        oUsuario.USU_nombreUsuario = txtUsuario.Text;
+                        oUsuario.ROL_codigo = (string)cboRol.SelectedValue;
 
-                cargarGrilla();
+                        TrabajarUsuarios.ModificarUsuario(oUsuario);
+
+                        cargarGrilla();
+                        limpiarCampos();
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Este nombre de usuario ya esta registrado, intente con otro.");
+                }
             }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             dgvUsuarios.DataSource = TrabajarUsuarios.traerUsuario(txtFiltro.Text);
+
+            if (dgvUsuarios.DataSource == null)
+            {
+                MessageBox.Show("No se encontraron coincidencias.");
+            }
         }
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -114,6 +161,12 @@ namespace Vistas
                 txtUsuario.Text = usuario;
                 string contraseña = (string)dgvUsuarios.CurrentRow.Cells[4].Value;
                 txtContraseña.Text = contraseña;
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+            txtFiltro.Text = "";
         }
    }
 }

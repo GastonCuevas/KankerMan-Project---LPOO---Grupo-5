@@ -37,10 +37,17 @@
             this.gbFechas = new System.Windows.Forms.GroupBox();
             this.btnFiltrarFechas = new System.Windows.Forms.Button();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.btnFilterMarca = new System.Windows.Forms.Button();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.btnInvalidar = new System.Windows.Forms.Button();
+            this.lblIdVenta = new System.Windows.Forms.Label();
+            this.btnValidar = new System.Windows.Forms.Button();
+            this.lblSeleccionada = new System.Windows.Forms.Label();
+            this.gbAcciones = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.gbFechas.SuspendLayout();
+            this.gbAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvVentas
@@ -48,8 +55,9 @@
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(12, 167);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(695, 241);
+            this.dgvVentas.Size = new System.Drawing.Size(762, 241);
             this.dgvVentas.TabIndex = 0;
+            this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
             // 
             // cbClientes
             // 
@@ -101,7 +109,7 @@
             this.gbFechas.Size = new System.Drawing.Size(426, 42);
             this.gbFechas.TabIndex = 6;
             this.gbFechas.TabStop = false;
-            this.gbFechas.Text = "Rango de Fechas";
+            this.gbFechas.Text = "Date Range";
             this.gbFechas.UseCompatibleTextRendering = true;
             // 
             // btnFiltrarFechas
@@ -119,16 +127,9 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(28, 129);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.Size = new System.Drawing.Size(35, 13);
             this.lblMarca.TabIndex = 8;
-            this.lblMarca.Text = "Marca";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(92, 126);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(330, 20);
-            this.txtMarca.TabIndex = 9;
+            this.lblMarca.Text = "Brand";
             // 
             // btnFilterMarca
             // 
@@ -140,13 +141,83 @@
             this.btnFilterMarca.UseVisualStyleBackColor = true;
             this.btnFilterMarca.Click += new System.EventHandler(this.btnFilterMarca_Click);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(560, 124);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrescar.TabIndex = 14;
+            this.btnRefrescar.Text = "Refresh Grid";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(92, 126);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(330, 21);
+            this.cboMarca.TabIndex = 15;
+            // 
+            // btnInvalidar
+            // 
+            this.btnInvalidar.Location = new System.Drawing.Point(130, 15);
+            this.btnInvalidar.Name = "btnInvalidar";
+            this.btnInvalidar.Size = new System.Drawing.Size(77, 23);
+            this.btnInvalidar.TabIndex = 13;
+            this.btnInvalidar.Text = "Invalidate";
+            this.btnInvalidar.UseVisualStyleBackColor = true;
+            this.btnInvalidar.Click += new System.EventHandler(this.btnInvalidar_Click);
+            // 
+            // lblIdVenta
+            // 
+            this.lblIdVenta.AutoSize = true;
+            this.lblIdVenta.Location = new System.Drawing.Point(3, 36);
+            this.lblIdVenta.Name = "lblIdVenta";
+            this.lblIdVenta.Size = new System.Drawing.Size(96, 13);
+            this.lblIdVenta.TabIndex = 11;
+            this.lblIdVenta.Text = "Selected Sale (ID):";
+            // 
+            // btnValidar
+            // 
+            this.btnValidar.Location = new System.Drawing.Point(130, 44);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(77, 23);
+            this.btnValidar.TabIndex = 14;
+            this.btnValidar.Text = "Validate";
+            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
+            // 
+            // lblSeleccionada
+            // 
+            this.lblSeleccionada.AutoSize = true;
+            this.lblSeleccionada.Location = new System.Drawing.Point(105, 36);
+            this.lblSeleccionada.Name = "lblSeleccionada";
+            this.lblSeleccionada.Size = new System.Drawing.Size(0, 13);
+            this.lblSeleccionada.TabIndex = 16;
+            // 
+            // gbAcciones
+            // 
+            this.gbAcciones.Controls.Add(this.lblSeleccionada);
+            this.gbAcciones.Controls.Add(this.btnValidar);
+            this.gbAcciones.Controls.Add(this.lblIdVenta);
+            this.gbAcciones.Controls.Add(this.btnInvalidar);
+            this.gbAcciones.Location = new System.Drawing.Point(567, 26);
+            this.gbAcciones.Name = "gbAcciones";
+            this.gbAcciones.Size = new System.Drawing.Size(215, 77);
+            this.gbAcciones.TabIndex = 17;
+            this.gbAcciones.TabStop = false;
+            this.gbAcciones.Text = "Actions";
+            // 
             // frmListaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 446);
+            this.ClientSize = new System.Drawing.Size(786, 477);
+            this.Controls.Add(this.gbAcciones);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnFilterMarca);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.btnFiltrarFechas);
             this.Controls.Add(this.gbFechas);
@@ -159,6 +230,8 @@
             this.Load += new System.EventHandler(this.frmListaVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.gbFechas.ResumeLayout(false);
+            this.gbAcciones.ResumeLayout(false);
+            this.gbAcciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +248,13 @@
         private System.Windows.Forms.GroupBox gbFechas;
         private System.Windows.Forms.Button btnFiltrarFechas;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Button btnFilterMarca;
+        private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.Button btnInvalidar;
+        private System.Windows.Forms.Label lblIdVenta;
+        private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.Label lblSeleccionada;
+        private System.Windows.Forms.GroupBox gbAcciones;
     }
 }

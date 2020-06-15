@@ -56,5 +56,13 @@ namespace ClasesBase
             get { return VTA_PrecioFinal; }
             set { VTA_PrecioFinal = value; }
         }
+
+        private bool VTA_Estado;
+
+        public bool VTA_estado
+        {
+            get { return VTA_Estado; }
+            set { VTA_Estado = value; }
+        }
     }
 }

@@ -280,5 +280,51 @@ namespace ClasesBase
             //Retornamos la tabla cargada
             return dt;
         }
+
+        /// <summary>
+        /// Método que verifica si el Vehículo ya está registrado en la base de datos
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// <returns>bandera</returns>
+        public static bool VerificarVehiculo(string matricula)
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta - Select con parametros
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @" select veh_matricula " + "From Vehiculo";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            bool bandera = false;
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader["veh_matricula"].Equals(matricula))
+                    {
+                        bandera = true;
+                    }
+                }
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                string error = ex.Message;
+                bandera = false;
+            }
+            finally
+            {
+                cnn.Close();
+            }
+
+            return bandera;
+
+        }
     }
 }

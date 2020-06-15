@@ -299,5 +299,51 @@ namespace ClasesBase
             //Retornamos la tabla cargada
             return dt;
         }
+
+        /// <summary>
+        /// Método que verifica si el cliente ya está registrado en la base de datos
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns>bandera</returns>
+        public static bool VerificarCliente(string dni)
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta - Select con parametros
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @" select cli_dni "+ "From Cliente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            bool bandera = false;
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader["cli_dni"].Equals(dni))
+                    {
+                        bandera = true;
+                    }
+                }
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                string error = ex.Message;
+                bandera = false;
+            }
+            finally 
+            {
+                cnn.Close();
+            }
+
+            return bandera;
+
+        }
     }
 }

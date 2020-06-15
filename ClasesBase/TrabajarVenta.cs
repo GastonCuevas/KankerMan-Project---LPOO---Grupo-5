@@ -22,9 +22,9 @@ namespace ClasesBase
 
             //Configuración de la consulta - Insert con parametros
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"insert into Venta(cli_dni,veh_matricula,usu_id,vta_fecha,vta_formapago,vta_preciofinal)
+            cmd.CommandText = @"insert into Venta(cli_dni,veh_matricula,usu_id,vta_fecha,vta_formapago,vta_preciofinal,vta_estado)
                                 values
-                                (@dni,@m,@id,@f,@p,@pf)";
+                                (@dni,@m,@id,@f,@p,@pf,@es)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -35,6 +35,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@f", oVenta.VTA_fecha);
             cmd.Parameters.AddWithValue("@p", oVenta.VTA_formaPago);
             cmd.Parameters.AddWithValue("@pf", oVenta.VTA_precioFinal);
+            cmd.Parameters.AddWithValue("@es", oVenta.VTA_estado);
 
             cnn.Open();
 
@@ -44,6 +45,10 @@ namespace ClasesBase
 
         }
 
+        /// <summary>
+        /// Método que carga la grilla de la lista de ventas
+        /// </summary>
+        /// <returns>DataTable Ventas</returns>
         public static DataTable TraerVenta()
         {
             //Conexión
@@ -172,6 +177,37 @@ namespace ClasesBase
 
             //Retornamos la tabla cargada
             return dt;
+        }
+
+        /// <summary>
+        /// Método que cambia el estado de una Venta de la tabla de Venta
+        /// </summary>
+        /// <param name="oVenta"></param>
+        public static void CambiarVenta(Venta oVenta)
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta - Update con parametros
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "invalidarVenta";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            //Configuración de los parametros
+            cmd.Parameters.AddWithValue("@id", oVenta.VTA_id);
+            cmd.Parameters.AddWithValue("@estado", oVenta.VTA_estado);
+            cmd.Parameters.AddWithValue("@uid", oVenta.USU_id);
+            cmd.Parameters.AddWithValue("@matricula", oVenta.VEH_matricula);
+            cmd.Parameters.AddWithValue("@fecha", oVenta.VTA_fecha);
+            cmd.Parameters.AddWithValue("@fp", oVenta.VTA_formaPago);
+            cmd.Parameters.AddWithValue("@pf", oVenta.VTA_precioFinal);
+
+            cnn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            cnn.Close();
         }
     }
     }
