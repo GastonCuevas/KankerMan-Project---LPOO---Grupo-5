@@ -30,7 +30,7 @@ namespace Vistas
             cboRol.DataSource = TrabajarUsuarios.traerRoles();
             cboRol.DisplayMember = "ROL_Descripcion";
             cboRol.ValueMember = "Rol_Codigo";
-            cboRol.Text = "Seleccionar Rol";
+            cboRol.Text = "Select Rol";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

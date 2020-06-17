@@ -240,7 +240,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDNI);
             this.Name = "frmClientes";
-            this.Text = "frmClientes";
+            this.Text = "Clients Management";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);

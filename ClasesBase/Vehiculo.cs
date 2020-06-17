@@ -51,26 +51,27 @@
             get { return VEH_GPS; }
             set { VEH_GPS = value; }
         }
-        private string VEH_TipoVehiculo;
-
-        public string VEH_tipoVehiculo
-        {
-            get { return VEH_TipoVehiculo; }
-            set { VEH_TipoVehiculo = value; }
-        }
-        private string VEH_ClaseVehiculo;
-
-        public string VEH_claseVehiculo
-        {
-            get { return VEH_ClaseVehiculo; }
-            set { VEH_ClaseVehiculo = value; }
-        }
         private decimal VEH_Precio;
 
         public decimal VEH_precio
         {
             get { return VEH_Precio; }
             set { VEH_Precio = value; }
+        }
+
+        private int TV_ID;
+
+        public int TV_id
+        {
+            get { return TV_ID; }
+            set { TV_ID = value; }
+        }
+        private int CV_ID;
+
+        public int CV_id
+        {
+            get { return CV_ID; }
+            set { CV_ID = value; }
         }
     }
 }

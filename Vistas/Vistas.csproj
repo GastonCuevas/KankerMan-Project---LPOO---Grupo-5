@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmClaseVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaseVehiculo.Designer.cs">
+      <DependentUpon>frmClaseVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormaPago.Designer.cs">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListaVentas.cs">
       <SubType>Form</SubType>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoVehiculo.Designer.cs">
+      <DependentUpon>frmTipoVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -101,8 +119,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmClaseVehiculo.resx">
+      <DependentUpon>frmClaseVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormaPago.resx">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaVentas.resx">
       <DependentUpon>frmListaVentas.cs</DependentUpon>
@@ -112,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoVehiculo.resx">
+      <DependentUpon>frmTipoVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

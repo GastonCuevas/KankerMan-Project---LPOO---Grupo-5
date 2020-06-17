@@ -10,14 +10,14 @@
   <Class Name="ClasesBase.Vehiculo">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACABAAEBAgAAAAAAAAABAAGAgogAJAJCAAABAAACA=</HashCode>
+      <HashCode>AAACABAAEBAgAAAAAAAAQBAAMAAogAJABAAgABAAAGA=</HashCode>
       <FileName>Vehiculo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClasesBase.Venta">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEJEAAEAAEAACAAAAUAECAEIAAAQAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAEJAAAEAAEAACAAIAUAADAEIAAAQAAAAAAAA=</HashCode>
       <FileName>Venta.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -33,6 +33,27 @@
     <TypeIdentifier>
       <HashCode>CAAgAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.TipoVehiculo">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAQAAAAAIAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>TipoVehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.ClaseVehiculo">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAgQAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>ClaseVehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.FormaPago">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAEIAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormaPago.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

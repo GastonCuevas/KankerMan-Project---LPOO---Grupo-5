@@ -25,7 +25,7 @@ namespace Vistas
             string rol = TrabajarUsuarios.ValidarUsuario(u,p);
             FrmMain oFrmMain = new FrmMain(rol,u);
 
-            if (rol!=null)
+            if (rol == "ADT" || rol == "VND" || rol == "ADM")
             {
                 MessageBox.Show("Welcome: " + txtNombreUs.Text, "SYSTEM");
 
@@ -34,6 +34,8 @@ namespace Vistas
             else
             {
                 MessageBox.Show("the data entered is incorrect");
+                txtNombreUs.Text = "";
+                txtContraseña.Text = "";
             }
         }
 

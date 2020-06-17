@@ -34,6 +34,7 @@
             this.clientsRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiclesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newSaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +42,8 @@
             this.gestionarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closebutton = new System.Windows.Forms.Button();
             this.lblUsuarioLogueado = new System.Windows.Forms.Label();
+            this.vehicleClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wayToPayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionsmenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +91,10 @@
             // vehiclesToolStripMenuItem
             // 
             this.vehiclesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vehicleRegistrationToolStripMenuItem});
+            this.vehicleRegistrationToolStripMenuItem,
+            this.toolStripTextBox1,
+            this.vehicleClassToolStripMenuItem,
+            this.wayToPayToolStripMenuItem});
             this.vehiclesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 22, 0, 0);
             this.vehiclesToolStripMenuItem.Name = "vehiclesToolStripMenuItem";
             this.vehiclesToolStripMenuItem.Size = new System.Drawing.Size(62, 19);
@@ -100,6 +106,13 @@
             this.vehicleRegistrationToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.vehicleRegistrationToolStripMenuItem.Text = "Vehicle Management";
             this.vehicleRegistrationToolStripMenuItem.Click += new System.EventHandler(this.vehicleRegistrationToolStripMenuItem_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "Vehicle Type";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // salesToolStripMenuItem
             // 
@@ -114,14 +127,14 @@
             // newSaleToolStripMenuItem
             // 
             this.newSaleToolStripMenuItem.Name = "newSaleToolStripMenuItem";
-            this.newSaleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newSaleToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.newSaleToolStripMenuItem.Text = "New Sale";
             this.newSaleToolStripMenuItem.Click += new System.EventHandler(this.newSaleToolStripMenuItem_Click);
             // 
             // viewSalesToolStripMenuItem
             // 
             this.viewSalesToolStripMenuItem.Name = "viewSalesToolStripMenuItem";
-            this.viewSalesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewSalesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.viewSalesToolStripMenuItem.Text = "View Sales";
             this.viewSalesToolStripMenuItem.Click += new System.EventHandler(this.viewSalesToolStripMenuItem_Click);
             // 
@@ -160,6 +173,20 @@
             this.lblUsuarioLogueado.Size = new System.Drawing.Size(0, 13);
             this.lblUsuarioLogueado.TabIndex = 2;
             // 
+            // vehicleClassToolStripMenuItem
+            // 
+            this.vehicleClassToolStripMenuItem.Name = "vehicleClassToolStripMenuItem";
+            this.vehicleClassToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.vehicleClassToolStripMenuItem.Text = "Vehicle Class";
+            this.vehicleClassToolStripMenuItem.Click += new System.EventHandler(this.vehicleClassToolStripMenuItem_Click);
+            // 
+            // wayToPayToolStripMenuItem
+            // 
+            this.wayToPayToolStripMenuItem.Name = "wayToPayToolStripMenuItem";
+            this.wayToPayToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wayToPayToolStripMenuItem.Text = "Way To Pay";
+            this.wayToPayToolStripMenuItem.Click += new System.EventHandler(this.wayToPayToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +223,8 @@
         private System.Windows.Forms.Label lblUsuarioLogueado;
         private System.Windows.Forms.ToolStripMenuItem newSaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem vehicleClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wayToPayToolStripMenuItem;
     }
 }

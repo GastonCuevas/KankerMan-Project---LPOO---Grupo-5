@@ -51,8 +51,8 @@ namespace Vistas
                     oVehiculo.VEH_color = colortextBox.Text;
                     oVehiculo.VEH_puertas = Int32.Parse(doortextBox.Text);
                     oVehiculo.VEH_gps = GPScheckBox.Checked;
-                    oVehiculo.VEH_tipoVehiculo = vehicletypetextBox.Text;
-                    oVehiculo.VEH_claseVehiculo = vehicleclasstextBox.Text;
+                    oVehiculo.TV_id = Int32.Parse(vehicletypetextBox.Text);
+                    oVehiculo.CV_id = Int32.Parse(vehicleclasstextBox.Text);
                     oVehiculo.VEH_precio = Decimal.Parse(pricetextBox.Text);
                     bVehiculoFound = true;
                 }
@@ -63,7 +63,7 @@ namespace Vistas
                     "\n\nLine: " + oVehiculo.VEH_linea + "\n\nCar Number Plate: " + oVehiculo.VEH_matricula +
                     "\n\nModel: " + oVehiculo.VEH_modelo + "\n\nColor: " + oVehiculo.VEH_color +
                     "\n\nDoors: " + oVehiculo.VEH_puertas + "\n\nGPS: " + oVehiculo.VEH_gps +
-                    "\n\nVehicle Type: " + oVehiculo.VEH_tipoVehiculo + "\n\nVehicle Class: " + oVehiculo.VEH_claseVehiculo +
+                    "\n\nVehicle Type: " + oVehiculo.TV_id + "\n\nVehicle Class: " + oVehiculo.CV_id +
                     "\n\nPrice: " + oVehiculo.VEH_precio, "Data saved successfully!!!");
 
             }

@@ -30,3 +30,6 @@ D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debu
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmClientes.resources
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmListaVentas.resources
 D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmVehiculos.resources
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmTipoVehiculo.resources
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmClaseVehiculo.resources
+D:\Documents\Visual Studio 2010\Projects\LPOO1_Grupo5_TPN°1\Vistas\obj\x86\Debug\Vistas.frmFormaPago.resources

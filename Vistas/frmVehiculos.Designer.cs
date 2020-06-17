@@ -357,7 +357,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvVehiculos);
             this.Name = "frmVehiculos";
-            this.Text = "frmVehiculos";
+            this.Text = "Vehicle Management";
             this.Load += new System.EventHandler(this.frmVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.gbOrdenar.ResumeLayout(false);

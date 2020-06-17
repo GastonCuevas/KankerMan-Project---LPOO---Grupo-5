@@ -20,6 +20,7 @@ namespace Vistas
             //Application.Run(new frmVentas());
             //Application.Run(new frmClientes());
             //Application.Run(new frmVehiculos());
+            //Application.Run(new frmFormaPago());
         }
     }
 }

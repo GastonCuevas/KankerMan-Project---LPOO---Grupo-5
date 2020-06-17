@@ -202,7 +202,7 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.dgvUsuarios);
             this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
+            this.Text = "Users Management";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);

@@ -42,12 +42,12 @@ namespace ClasesBase
             get { return VTA_Fecha; }
             set { VTA_Fecha = value; }
         }
-        private string VTA_FormaPago;
+        private int FP_ID;
 
-        public string VTA_formaPago
+        public int FP_id
         {
-            get { return VTA_FormaPago; }
-            set { VTA_FormaPago = value; }
+            get { return FP_ID; }
+            set { FP_ID = value; }
         }
         private decimal VTA_PrecioFinal;
 

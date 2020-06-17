@@ -22,7 +22,7 @@ namespace ClasesBase
 
             //Configuración de la consulta - Insert con parametros
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"insert into Venta(cli_dni,veh_matricula,usu_id,vta_fecha,vta_formapago,vta_preciofinal,vta_estado)
+            cmd.CommandText = @"insert into Venta(cli_dni,veh_matricula,usu_id,vta_fecha,fp_id,vta_preciofinal,vta_estado)
                                 values
                                 (@dni,@m,@id,@f,@p,@pf,@es)";
             cmd.CommandType = CommandType.Text;
@@ -33,7 +33,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@m", oVenta.VEH_matricula);
             cmd.Parameters.AddWithValue("@id", oVenta.USU_id);
             cmd.Parameters.AddWithValue("@f", oVenta.VTA_fecha);
-            cmd.Parameters.AddWithValue("@p", oVenta.VTA_formaPago);
+            cmd.Parameters.AddWithValue("@p", oVenta.FP_id);
             cmd.Parameters.AddWithValue("@pf", oVenta.VTA_precioFinal);
             cmd.Parameters.AddWithValue("@es", oVenta.VTA_estado);
 
@@ -200,7 +200,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@uid", oVenta.USU_id);
             cmd.Parameters.AddWithValue("@matricula", oVenta.VEH_matricula);
             cmd.Parameters.AddWithValue("@fecha", oVenta.VTA_fecha);
-            cmd.Parameters.AddWithValue("@fp", oVenta.VTA_formaPago);
+            cmd.Parameters.AddWithValue("@fp", oVenta.FP_id);
             cmd.Parameters.AddWithValue("@pf", oVenta.VTA_precioFinal);
 
             cnn.Open();

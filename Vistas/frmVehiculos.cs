@@ -27,9 +27,9 @@ namespace Vistas
 
         private void cargarComboBox()
         {
-            cboMarca.Items.Add("Chevrolet");
-            cboMarca.Items.Add("Volkswagen");
-            cboMarca.Items.Add("Renault");
+            cboMarca.DataSource = TrabajarVehiculo.traerMarcaComboBox();
+            cboMarca.DisplayMember = "Descripcion";
+            cboMarca.ValueMember = "Descripcion";
             cboMarca.Text = "Select Brand";
 
             cboLinea.Items.Add("Corsa");
@@ -37,9 +37,9 @@ namespace Vistas
             cboLinea.Items.Add("Clio");
             cboLinea.Text = "Select Line";
 
-            cboClaseVehiculo.Items.Add("Pasajeros");
-            cboClaseVehiculo.Items.Add("Carga");
-            cboClaseVehiculo.Items.Add("Deportivos");
+            cboClaseVehiculo.DataSource = TrabajarClaseVehiculo.ObtenerClase();
+            cboClaseVehiculo.DisplayMember = "Descripción";
+            cboClaseVehiculo.ValueMember = "ID";
             cboClaseVehiculo.Text = "Select Vehicle Class";
 
             cboColor.Items.Add("Rojo");
@@ -53,10 +53,9 @@ namespace Vistas
             cboCantPuertas.Items.Add("5");
             cboCantPuertas.Text = "Select Doors";
 
-            cboTipoVehiculo.Items.Add("Monovolumen");
-            cboTipoVehiculo.Items.Add("Automóvil");
-            cboTipoVehiculo.Items.Add("Utilitario");
-            cboTipoVehiculo.Items.Add("Camioneta");
+            cboTipoVehiculo.DataSource = TrabajarTipoVehiculo.ObtenerTipo();
+            cboTipoVehiculo.DisplayMember = "Descripción";
+            cboTipoVehiculo.ValueMember = "ID";
             cboTipoVehiculo.Text = "Select Vehicle Type";
 
             nudModelo.Minimum = 0;
@@ -92,11 +91,11 @@ namespace Vistas
                         oVehiculo.VEH_modelo = Convert.ToInt32(nudModelo.Value);
                         oVehiculo.VEH_linea = cboLinea.Text;
                         oVehiculo.VEH_color = cboColor.Text;
-                        oVehiculo.VEH_claseVehiculo = cboClaseVehiculo.Text;
+                        oVehiculo.CV_id = (Int32)cboClaseVehiculo.SelectedValue;
                         oVehiculo.VEH_gps = cbGPS.Checked;
                         oVehiculo.VEH_precio = nudPrecio.Value;
                         oVehiculo.VEH_puertas = Convert.ToInt32(cboCantPuertas.Text);
-                        oVehiculo.VEH_tipoVehiculo = cboTipoVehiculo.Text;
+                        oVehiculo.TV_id = (Int32)cboTipoVehiculo.SelectedValue;
 
                         TrabajarVehiculo.AgregarVehiculo(oVehiculo);
 
@@ -148,11 +147,11 @@ namespace Vistas
                         oVehiculo.VEH_modelo = Convert.ToInt32(nudModelo.Value);
                         oVehiculo.VEH_linea = cboLinea.Text;
                         oVehiculo.VEH_color = cboColor.Text;
-                        oVehiculo.VEH_claseVehiculo = cboClaseVehiculo.Text;
+                        oVehiculo.CV_id = (Int32)cboClaseVehiculo.SelectedValue;
                         oVehiculo.VEH_gps = cbGPS.Checked;
                         oVehiculo.VEH_precio = nudPrecio.Value;
                         oVehiculo.VEH_puertas = Convert.ToInt32(cboCantPuertas.Text);
-                        oVehiculo.VEH_tipoVehiculo = cboTipoVehiculo.Text;
+                        oVehiculo.TV_id = (Int32)cboTipoVehiculo.SelectedValue;
 
                         TrabajarVehiculo.ModificarVehiculo(oVehiculo);
 
@@ -190,9 +189,9 @@ namespace Vistas
             cboColor.Text = (string)dgvVehiculos.CurrentRow.Cells[4].Value;
             cboCantPuertas.Text = Convert.ToString(dgvVehiculos.CurrentRow.Cells[5].Value);
             cbGPS.Checked = (Boolean)dgvVehiculos.CurrentRow.Cells[6].Value;
-            cboTipoVehiculo.Text = (string)dgvVehiculos.CurrentRow.Cells[7].Value;
-            cboClaseVehiculo.Text = (string)dgvVehiculos.CurrentRow.Cells[8].Value;
-            nudPrecio.Value = Convert.ToDecimal(dgvVehiculos.CurrentRow.Cells[9].Value);
+            cboTipoVehiculo.Text = (string)dgvVehiculos.CurrentRow.Cells[8].Value;
+            cboClaseVehiculo.Text = (string)dgvVehiculos.CurrentRow.Cells[9].Value;
+            nudPrecio.Value = Convert.ToDecimal(dgvVehiculos.CurrentRow.Cells[7].Value);
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)

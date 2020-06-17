@@ -37,9 +37,10 @@
             this.cboVehiculo = new System.Windows.Forms.ComboBox();
             this.lblFormaPago = new System.Windows.Forms.Label();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // lblClientes
@@ -121,13 +122,6 @@
             this.cboFormaPago.Size = new System.Drawing.Size(348, 21);
             this.cboFormaPago.TabIndex = 8;
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(156, 216);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(348, 20);
-            this.txtPrecio.TabIndex = 10;
-            // 
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
@@ -145,14 +139,21 @@
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Price";
             // 
+            // nudPrecio
+            // 
+            this.nudPrecio.Location = new System.Drawing.Point(156, 217);
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(86, 20);
+            this.nudPrecio.TabIndex = 14;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 446);
+            this.Controls.Add(this.nudPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblVendedor);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboFormaPago);
             this.Controls.Add(this.lblFormaPago);
             this.Controls.Add(this.cboVehiculo);
@@ -163,8 +164,9 @@
             this.Controls.Add(this.cboClientes);
             this.Controls.Add(this.lblClientes);
             this.Name = "frmVentas";
-            this.Text = "frmVentas";
+            this.Text = "New Sales";
             this.Load += new System.EventHandler(this.frmVentas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,8 +183,8 @@
         private System.Windows.Forms.ComboBox cboVehiculo;
         private System.Windows.Forms.Label lblFormaPago;
         private System.Windows.Forms.ComboBox cboFormaPago;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.NumericUpDown nudPrecio;
     }
 }

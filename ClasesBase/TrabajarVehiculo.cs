@@ -43,6 +43,37 @@ namespace ClasesBase
         }
 
         /// <summary>
+        /// Método que consulta a la tabla Marca y devuelve los datos para un comboBox 
+        /// </summary>
+        /// <returns>Tabla con datos de Marca</returns>
+        public static DataTable traerMarcaComboBox()
+        {
+            //Conexión
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //Configuración de la consulta
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "select mar_descripcion as Descripcion from Marca";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //Creación de la tabla
+
+            DataTable dt = new DataTable();
+
+            //Cración del adaptador
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+
+            //Llenamos la tabla con los datos que necesitamos
+            da.Fill(dt);
+
+            //Retornamos la tabla cargada
+            return dt;
+        }
+
+        /// <summary>
         /// Devuelve el precio del vehiculo segun un parametro 
         /// </summary>
         /// <param name="p">matricula</param>
@@ -96,14 +127,8 @@ namespace ClasesBase
 
             //Configuración de la consulta
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = " select";
-            cmd.CommandText += " veh_matricula as 'Matrícula', ";
-            cmd.CommandText += " veh_marca as 'Marca', veh_linea as 'Linea', ";
-            cmd.CommandText += " veh_modelo as 'Modelo', veh_color as 'Color', ";
-            cmd.CommandText += " veh_puertas as 'Puertas', veh_gps as 'GPS', ";
-            cmd.CommandText += " veh_tipovehiculo as 'Tipo de Vehículo', veh_clasevehiculo as 'Clase de Vehículo', veh_precio as 'Precio' ";
-            cmd.CommandText += " from Vehiculo as V";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "traerVehiculo";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             //Creación de la tabla
@@ -145,8 +170,8 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@color", oVehiculo.VEH_color);
             cmd.Parameters.AddWithValue("@puertas", oVehiculo.VEH_puertas);
             cmd.Parameters.AddWithValue("@gps", oVehiculo.VEH_gps);
-            cmd.Parameters.AddWithValue("@tvehi", oVehiculo.VEH_tipoVehiculo);
-            cmd.Parameters.AddWithValue("@cvehi", oVehiculo.VEH_claseVehiculo);
+            cmd.Parameters.AddWithValue("@tvehi", oVehiculo.TV_id);
+            cmd.Parameters.AddWithValue("@cvehi", oVehiculo.CV_id);
             cmd.Parameters.AddWithValue("@precio", oVehiculo.VEH_precio);
 
             cnn.Open();
@@ -206,8 +231,8 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@color", oVehiculo.VEH_color);
             cmd.Parameters.AddWithValue("@puertas", oVehiculo.VEH_puertas);
             cmd.Parameters.AddWithValue("@gps", oVehiculo.VEH_gps);
-            cmd.Parameters.AddWithValue("@tipov", oVehiculo.VEH_tipoVehiculo);
-            cmd.Parameters.AddWithValue("@clasev", oVehiculo.VEH_claseVehiculo);
+            cmd.Parameters.AddWithValue("@tipov", oVehiculo.TV_id);
+            cmd.Parameters.AddWithValue("@clasev", oVehiculo.CV_id);
             cmd.Parameters.AddWithValue("@precio", oVehiculo.VEH_precio);
 
             cnn.Open();

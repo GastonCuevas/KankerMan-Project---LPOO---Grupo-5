@@ -98,5 +98,23 @@ namespace Vistas
             frmListaVentas oFrmListaVenta = new frmListaVentas();
             oFrmListaVenta.Show();
         }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            frmTipoVehiculo oFrmTipoVehiculo = new frmTipoVehiculo();
+            oFrmTipoVehiculo.Show();
+        }
+
+        private void vehicleClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClaseVehiculo oFrmClaseVehiculo = new frmClaseVehiculo();
+            oFrmClaseVehiculo.Show();
+        }
+
+        private void wayToPayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFormaPago oFrmFormaPago = new frmFormaPago();
+            oFrmFormaPago.Show();
+        }
     }
 }

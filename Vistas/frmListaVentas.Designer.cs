@@ -45,9 +45,14 @@
             this.btnValidar = new System.Windows.Forms.Button();
             this.lblSeleccionada = new System.Windows.Forms.Label();
             this.gbAcciones = new System.Windows.Forms.GroupBox();
+            this.lblCantVentas = new System.Windows.Forms.Label();
+            this.gbDatosVentas = new System.Windows.Forms.GroupBox();
+            this.lblImporteTotal = new System.Windows.Forms.Label();
+            this.lblInvalidadas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.gbFechas.SuspendLayout();
             this.gbAcciones.SuspendLayout();
+            this.gbDatosVentas.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvVentas
@@ -137,7 +142,7 @@
             this.btnFilterMarca.Name = "btnFilterMarca";
             this.btnFilterMarca.Size = new System.Drawing.Size(71, 28);
             this.btnFilterMarca.TabIndex = 10;
-            this.btnFilterMarca.Text = "Marca Filter";
+            this.btnFilterMarca.Text = "Brand Filter";
             this.btnFilterMarca.UseVisualStyleBackColor = true;
             this.btnFilterMarca.Click += new System.EventHandler(this.btnFilterMarca_Click);
             // 
@@ -209,11 +214,51 @@
             this.gbAcciones.TabStop = false;
             this.gbAcciones.Text = "Actions";
             // 
+            // lblCantVentas
+            // 
+            this.lblCantVentas.AutoSize = true;
+            this.lblCantVentas.Location = new System.Drawing.Point(37, 25);
+            this.lblCantVentas.Name = "lblCantVentas";
+            this.lblCantVentas.Size = new System.Drawing.Size(66, 13);
+            this.lblCantVentas.TabIndex = 18;
+            this.lblCantVentas.Text = "Total Sales: ";
+            // 
+            // gbDatosVentas
+            // 
+            this.gbDatosVentas.Controls.Add(this.lblImporteTotal);
+            this.gbDatosVentas.Controls.Add(this.lblCantVentas);
+            this.gbDatosVentas.Controls.Add(this.lblInvalidadas);
+            this.gbDatosVentas.Location = new System.Drawing.Point(198, 414);
+            this.gbDatosVentas.Name = "gbDatosVentas";
+            this.gbDatosVentas.Size = new System.Drawing.Size(437, 51);
+            this.gbDatosVentas.TabIndex = 19;
+            this.gbDatosVentas.TabStop = false;
+            this.gbDatosVentas.Text = "Sales Data:";
+            // 
+            // lblImporteTotal
+            // 
+            this.lblImporteTotal.AutoSize = true;
+            this.lblImporteTotal.Location = new System.Drawing.Point(269, 25);
+            this.lblImporteTotal.Name = "lblImporteTotal";
+            this.lblImporteTotal.Size = new System.Drawing.Size(73, 13);
+            this.lblImporteTotal.TabIndex = 21;
+            this.lblImporteTotal.Text = "Total Amount:";
+            // 
+            // lblInvalidadas
+            // 
+            this.lblInvalidadas.AutoSize = true;
+            this.lblInvalidadas.Location = new System.Drawing.Point(151, 25);
+            this.lblInvalidadas.Name = "lblInvalidadas";
+            this.lblInvalidadas.Size = new System.Drawing.Size(70, 13);
+            this.lblInvalidadas.TabIndex = 20;
+            this.lblInvalidadas.Text = "Invalid Sales:";
+            // 
             // frmListaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 477);
+            this.Controls.Add(this.gbDatosVentas);
             this.Controls.Add(this.gbAcciones);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.btnRefrescar);
@@ -226,12 +271,14 @@
             this.Controls.Add(this.cbClientes);
             this.Controls.Add(this.dgvVentas);
             this.Name = "frmListaVentas";
-            this.Text = "frmListaVentas";
+            this.Text = "Sales List";
             this.Load += new System.EventHandler(this.frmListaVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.gbFechas.ResumeLayout(false);
             this.gbAcciones.ResumeLayout(false);
             this.gbAcciones.PerformLayout();
+            this.gbDatosVentas.ResumeLayout(false);
+            this.gbDatosVentas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +303,9 @@
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label lblSeleccionada;
         private System.Windows.Forms.GroupBox gbAcciones;
+        private System.Windows.Forms.Label lblCantVentas;
+        private System.Windows.Forms.GroupBox gbDatosVentas;
+        private System.Windows.Forms.Label lblImporteTotal;
+        private System.Windows.Forms.Label lblInvalidadas;
     }
 }
